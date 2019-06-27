@@ -38,8 +38,6 @@ namespace urtk_courcework_v2
             {
                 entity.HasKey(e => e.IdDictionary);
 
-                entity.Property(e => e.IdDictionary).ValueGeneratedNever();
-
                 entity.Property(e => e.NameDictionary)
                     .IsRequired()
                     .HasMaxLength(50)
@@ -50,8 +48,6 @@ namespace urtk_courcework_v2
             {
                 entity.HasKey(e => e.IdProduct);
 
-                entity.Property(e => e.IdProduct).ValueGeneratedNever();
-
                 entity.Property(e => e.Price).HasColumnType("money");
 
                 entity.Property(e => e.ShelfLifeProduct).HasColumnType("date");
@@ -61,13 +57,17 @@ namespace urtk_courcework_v2
                     .HasForeignKey(d => d.IdDictionary)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Product_Dictionary");
+
+                entity.HasOne(d => d.IdWaybillNavigation)
+                    .WithMany(p => p.Product)
+                    .HasForeignKey(d => d.IdWaybill)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Product_Waybill");
             });
 
             modelBuilder.Entity<Provider>(entity =>
             {
                 entity.HasKey(e => e.IdProvider);
-
-                entity.Property(e => e.IdProvider).ValueGeneratedNever();
 
                 entity.Property(e => e.CityProvider)
                     .IsRequired()
@@ -99,8 +99,6 @@ namespace urtk_courcework_v2
             {
                 entity.HasKey(e => e.IdSale);
 
-                entity.Property(e => e.IdSale).ValueGeneratedNever();
-
                 entity.Property(e => e.DataSale).HasColumnType("date");
 
                 entity.HasOne(d => d.IdProductNavigation)
@@ -114,15 +112,7 @@ namespace urtk_courcework_v2
             {
                 entity.HasKey(e => e.IdWaybill);
 
-                entity.Property(e => e.IdWaybill).ValueGeneratedNever();
-
                 entity.Property(e => e.IdData).HasColumnType("date");
-
-                entity.HasOne(d => d.IdProductNavigation)
-                    .WithMany(p => p.Waybill)
-                    .HasForeignKey(d => d.IdProduct)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Waybill_Product");
 
                 entity.HasOne(d => d.IdProviderNavigation)
                     .WithMany(p => p.Waybill)

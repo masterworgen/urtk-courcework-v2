@@ -8,7 +8,6 @@ namespace urtk_courcework_v2
         public Product()
         {
             Sale = new HashSet<Sale>();
-            Waybill = new HashSet<Waybill>();
         }
 
         public int IdProduct { get; set; }
@@ -17,9 +16,10 @@ namespace urtk_courcework_v2
         public int RestProduct { get; set; }
         public decimal Price { get; set; }
         public int IdDictionary { get; set; }
+        public int IdWaybill { get; set; }
 
         public virtual Dictionary IdDictionaryNavigation { get; set; }
+        public virtual Waybill IdWaybillNavigation { get; set; }
         public virtual ICollection<Sale> Sale { get; set; }
-        public virtual ICollection<Waybill> Waybill { get; set; }
     }
 }
