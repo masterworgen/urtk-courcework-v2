@@ -79,6 +79,11 @@ namespace urtk_courcework_v2
                     .HasMaxLength(50)
                     .IsUnicode(false);
 
+                entity.Property(e => e.FaxProvider)
+                    .IsRequired()
+                    .HasMaxLength(7)
+                    .IsUnicode(false);
+
                 entity.Property(e => e.NameProvider)
                     .IsRequired()
                     .HasMaxLength(50)
@@ -87,6 +92,11 @@ namespace urtk_courcework_v2
                 entity.Property(e => e.PatronymicProvider)
                     .IsRequired()
                     .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.PhoneProvider)
+                    .IsRequired()
+                    .HasMaxLength(15)
                     .IsUnicode(false);
 
                 entity.Property(e => e.SurnameProvider)

@@ -15,8 +15,8 @@ namespace urtk_courcework_v2
         public string NameProvider { get; set; }
         public string SurnameProvider { get; set; }
         public string PatronymicProvider { get; set; }
-        public int PhoneProvider { get; set; }
-        public int FaxProvider { get; set; }
+        public string PhoneProvider { get; set; }
+        public string FaxProvider { get; set; }
         public string CityProvider { get; set; }
 
         public virtual ICollection<Waybill> Waybill { get; set; }
