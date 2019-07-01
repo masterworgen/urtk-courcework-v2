@@ -226,9 +226,36 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="groceryContext.cs" />
-    <Compile Include="Provider.cs" />
-    <Compile Include="Sale.cs" />
-    <Compile Include="Waybill.cs" />
+    <Compile Include="Domain\ProviderDomain.cs" />
+    <Compile Include="Domain\SaleDomain.cs" />
+    <Compile Include="Domain\WaybillDomain.cs" />
+    <Compile Include="Model\ProductModel.cs" />
+    <Compile Include="Model\ProviderModel.cs" />
+    <Compile Include="Model\WaybillModel.cs" />
+    <Compile Include="Pages\ProductPage.xaml.cs">
+      <DependentUpon>ProductPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\WaybillPage.xaml.cs">
+      <DependentUpon>WaybillPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\AddDictionaryWindow.xaml.cs">
+      <DependentUpon>AddDictionaryWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\AddProviderWindow.xaml.cs">
+      <DependentUpon>AddProviderWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\AddWaybillWindow.xaml.cs">
+      <DependentUpon>AddWaybillWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DeleteDictionaryWindow.xaml.cs">
+      <DependentUpon>DeleteDictionaryWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DeleteProviderWindow.xaml.cs">
+      <DependentUpon>DeleteProviderWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\UpdateDictionaryWindow.xaml.cs">
+      <DependentUpon>UpdateDictionaryWindow.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -237,14 +264,61 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Dictionary.cs" />
+    <Compile Include="Domain\DictionaryDomain.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\DictionaryPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ProductPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ProviderPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\WaybillPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\AddDictionaryWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\AddProviderWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\AddWaybillWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DeleteDictionaryWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DeleteProviderWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\UpdateDictionaryWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Product.cs" />
+    <Compile Include="Domain\ProductDomain.cs" />
+    <Compile Include="Model\DictionaryModel.cs" />
+    <Compile Include="Pages\DictionaryPage.xaml.cs">
+      <DependentUpon>DictionaryPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ProviderPage.xaml.cs">
+      <DependentUpon>ProviderPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

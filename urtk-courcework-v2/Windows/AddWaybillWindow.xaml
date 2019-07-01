@@ -1,0 +1,34 @@
+﻿<Window x:Class="urtk_courcework_v2.Windows.AddWaybillWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:urtk_courcework_v2.Windows"
+        mc:Ignorable="d"
+        Title="AddWaybillWindow" Height="800" Width="400">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="100px"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="Поставщик" VerticalAlignment="Center" FontSize="20"/>
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="Продукты" VerticalAlignment="Center" FontSize="20"/>
+        <TextBlock Grid.Row="2" Grid.Column="0" Text="Срок годности" VerticalAlignment="Center" FontSize="20"/>
+        <TextBlock Grid.Row="3" Grid.Column="0" Text="Количество" VerticalAlignment="Center" FontSize="20"/>
+        <TextBlock Grid.Row="4" Grid.Column="0" Text="Цена" VerticalAlignment="Center" FontSize="20"/>
+        <ListBox x:Name="providers" Grid.Row="0" Grid.Column="1" FontSize="15"/>
+        <ListBox x:Name="products" Grid.Row="1" Grid.Column="1" FontSize="15" SelectionMode="Extended"/>
+        <TextBox x:Name="date" Grid.Row="2" Grid.Column="1" FontSize="15" VerticalAlignment="Center" Text="10.07.2019"/>
+        <TextBox x:Name="count" Grid.Row="3" Grid.Column="1" FontSize="15" VerticalAlignment="Center" />
+        <TextBox x:Name="price" Grid.Row="4" Grid.Column="1" FontSize="15" VerticalAlignment="Center"/>
+        <Button Content="Добавить" FontSize="30" Grid.Row="5" Grid.ColumnSpan="2" Click="Button_Click"/>
+    </Grid>
+</Window>

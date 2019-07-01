@@ -5,8 +5,60 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:urtk_courcework_v2"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="768" Width="1024" Background="#ecf0f1">
+
+    <Window.Resources>
+        <Style TargetType="RadioButton">
+            <Setter Property="Background" Value="#81C784" />
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="RadioButton">
+                        <Grid Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" ClipToBounds="True">
+
+                            <Rectangle x:Name="Rectangle" DockPanel.Dock="Top" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Stroke="Transparent" Fill="{TemplateBinding Background}" />
+                            <!-- Present Content (text) of the button. -->
+                            <Rectangle x:Name="Highlighter" Stroke="Transparent" Fill="Transparent" HorizontalAlignment="Right" Width="15" VerticalAlignment="Stretch"/>
+                            <DockPanel Name="myContentPresenterDockPanel">
+                                <ContentPresenter x:Name="myContentPresenter" Content="{TemplateBinding  Content}" TextBlock.FontSize="25" TextBlock.FontFamily="Arial" TextBlock.FontWeight="Bold" TextBlock.Foreground="#fff" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </DockPanel>
+
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property ="Rectangle.Fill" TargetName="Rectangle" Value="#43A047" />
+                                <Setter Property ="TextBlock.Foreground" TargetName="myContentPresenter" Value="#212121" />
+                            </Trigger>
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter Property ="Rectangle.Fill" TargetName="Rectangle" Value="#4CAF50" />
+                                <Setter Property="Rectangle.Fill" TargetName="Highlighter" Value="#1B5E20" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
     <Grid>
-        
+        <DockPanel>
+            <Grid Width="250" x:Name="MenuGrid">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <RadioButton Content="Словарь" GroupName="knopki" Grid.Row="0" Checked="RadioButton_Checked"></RadioButton>
+                <RadioButton Content="Накладные" GroupName="knopki" Grid.Row="1" Checked="RadioButton_Checked"></RadioButton>
+                <RadioButton Content="Поставщики" GroupName="knopki" Grid.Row="2" Checked="RadioButton_Checked"></RadioButton>
+                <RadioButton GroupName="knopki" Grid.Row="3" Checked="RadioButton_Checked"></RadioButton>
+
+            </Grid>
+            <Grid x:Name="IntfGrid" >
+                <Frame x:Name="frame" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="1" NavigationUIVisibility="Hidden" BorderBrush="White"/>
+
+            </Grid>
+        </DockPanel>
     </Grid>
 </Window>

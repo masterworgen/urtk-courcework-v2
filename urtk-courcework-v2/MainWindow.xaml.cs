@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using urtk_courcework_v2.Pages;
 
 namespace urtk_courcework_v2
 {
@@ -24,5 +25,23 @@ namespace urtk_courcework_v2
         {
             InitializeComponent();
         }
+
+        private void RadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+            RadioButton button = (RadioButton)sender;
+            switch (button.Content.ToString())
+            {
+                case "Словарь":
+                    frame.Navigate(new DictionaryPage());
+                    break;
+                case "Накладные":
+                    frame.Navigate(new WaybillPage());
+                    break;
+                case "Поставщики":
+                    frame.Navigate(new ProviderPage());
+                    break;
+            }
+        }
     }
 }
+ 

@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using urtk_courcework_v2.Domain;
 
 namespace urtk_courcework_v2
 {
@@ -15,18 +16,19 @@ namespace urtk_courcework_v2
         {
         }
 
-        public virtual DbSet<Dictionary> Dictionary { get; set; }
-        public virtual DbSet<Product> Product { get; set; }
-        public virtual DbSet<Provider> Provider { get; set; }
-        public virtual DbSet<Sale> Sale { get; set; }
-        public virtual DbSet<Waybill> Waybill { get; set; }
+        public virtual DbSet<DictionaryDomain> Dictionary { get; set; }
+        public virtual DbSet<ProductDomain> Product { get; set; }
+        public virtual DbSet<ProviderDomain> Provider { get; set; }
+        public virtual DbSet<SaleDomain> Sale { get; set; }
+        public virtual DbSet<WaybillDomain> Waybill { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Server=DESKTOP-80TT6SQ\\SQLEXPRESS;Database=grocery;Trusted_Connection=True;");
+                optionsBuilder.UseSqlServer(
+                    "Server=DESKTOP-80TT6SQ\\SQLEXPRESS;Database=grocery;User Id=test;Password=test;");
             }
         }
 
@@ -34,7 +36,7 @@ namespace urtk_courcework_v2
         {
             modelBuilder.HasAnnotation("ProductVersion", "2.2.4-servicing-10062");
 
-            modelBuilder.Entity<Dictionary>(entity =>
+            modelBuilder.Entity<DictionaryDomain>(entity =>
             {
                 entity.HasKey(e => e.IdDictionary);
 
@@ -44,7 +46,7 @@ namespace urtk_courcework_v2
                     .IsUnicode(false);
             });
 
-            modelBuilder.Entity<Product>(entity =>
+            modelBuilder.Entity<ProductDomain>(entity =>
             {
                 entity.HasKey(e => e.IdProduct);
 
@@ -65,7 +67,7 @@ namespace urtk_courcework_v2
                     .HasConstraintName("FK_Product_Waybill");
             });
 
-            modelBuilder.Entity<Provider>(entity =>
+            modelBuilder.Entity<ProviderDomain>(entity =>
             {
                 entity.HasKey(e => e.IdProvider);
 
@@ -105,7 +107,7 @@ namespace urtk_courcework_v2
                     .IsUnicode(false);
             });
 
-            modelBuilder.Entity<Sale>(entity =>
+            modelBuilder.Entity<SaleDomain>(entity =>
             {
                 entity.HasKey(e => e.IdSale);
 
@@ -118,7 +120,7 @@ namespace urtk_courcework_v2
                     .HasConstraintName("FK_Sale_Product");
             });
 
-            modelBuilder.Entity<Waybill>(entity =>
+            modelBuilder.Entity<WaybillDomain>(entity =>
             {
                 entity.HasKey(e => e.IdWaybill);
 

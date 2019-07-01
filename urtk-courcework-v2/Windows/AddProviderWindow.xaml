@@ -1,0 +1,40 @@
+﻿<Window x:Class="urtk_courcework_v2.Windows.AddProviderWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:urtk_courcework_v2.Windows"
+        mc:Ignorable="d"
+        Title="AddProviderWindow" Height="500" Width="350">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="Название поставщика" TextWrapping="Wrap" FontSize="15" VerticalAlignment="Center"></TextBlock>
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="Имя" TextWrapping="Wrap" FontSize="15" VerticalAlignment="Center"></TextBlock>
+        <TextBlock Grid.Row="2" Grid.Column="0" Text="Фамилия" TextWrapping="Wrap" FontSize="15" VerticalAlignment="Center"></TextBlock>
+        <TextBlock Grid.Row="3" Grid.Column="0" Text="Отчество" TextWrapping="Wrap" FontSize="15" VerticalAlignment="Center"></TextBlock>
+        <TextBlock Grid.Row="4" Grid.Column="0" Text="Телефон" TextWrapping="Wrap" FontSize="15" VerticalAlignment="Center"></TextBlock>
+        <TextBlock Grid.Row="5" Grid.Column="0" Text="Факс" TextWrapping="Wrap" FontSize="15" VerticalAlignment="Center"></TextBlock>
+        <TextBlock Grid.Row="6" Grid.Column="0" Text="Город" TextWrapping="Wrap" FontSize="15" VerticalAlignment="Center"></TextBlock>
+        <TextBox x:Name="denomintation" Grid.Row="0" Grid.Column="1" FontSize="15" VerticalAlignment="Center"/>
+        <TextBox x:Name="name" Grid.Row="1" Grid.Column="1" FontSize="15" VerticalAlignment="Center"/>
+        <TextBox x:Name="surname" Grid.Row="2" Grid.Column="1" FontSize="15" VerticalAlignment="Center"/>
+        <TextBox x:Name="patronymic" Grid.Row="3" Grid.Column="1" FontSize="15" VerticalAlignment="Center"/>
+        <TextBox x:Name="phone" Grid.Row="4" Grid.Column="1" FontSize="15" VerticalAlignment="Center"/>
+        <TextBox x:Name="fax" Grid.Row="5" Grid.Column="1" FontSize="15" VerticalAlignment="Center"/>
+        <TextBox x:Name="city" Grid.Row="6" Grid.Column="1" FontSize="15" VerticalAlignment="Center"/>
+        <Button Content="Добавить поставщика" FontSize="30" Grid.Row="7" Grid.ColumnSpan="2" Click="Button_Click"/>
+    </Grid>
+</Window>
