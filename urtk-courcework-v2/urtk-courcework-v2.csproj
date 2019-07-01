@@ -231,9 +231,13 @@
     <Compile Include="Domain\WaybillDomain.cs" />
     <Compile Include="Model\ProductModel.cs" />
     <Compile Include="Model\ProviderModel.cs" />
+    <Compile Include="Model\SaleModel.cs" />
     <Compile Include="Model\WaybillModel.cs" />
     <Compile Include="Pages\ProductPage.xaml.cs">
       <DependentUpon>ProductPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SellPage.xaml.cs">
+      <DependentUpon>SellPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\WaybillPage.xaml.cs">
       <DependentUpon>WaybillPage.xaml</DependentUpon>
@@ -252,6 +256,9 @@
     </Compile>
     <Compile Include="Windows\DeleteProviderWindow.xaml.cs">
       <DependentUpon>DeleteProviderWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\SellProductWindow.xaml.cs">
+      <DependentUpon>SellProductWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\UpdateDictionaryWindow.xaml.cs">
       <DependentUpon>UpdateDictionaryWindow.xaml</DependentUpon>
@@ -281,6 +288,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\SellPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\WaybillPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -302,6 +313,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\DeleteProviderWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\SellProductWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

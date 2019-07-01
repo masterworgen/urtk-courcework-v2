@@ -40,6 +40,12 @@ namespace urtk_courcework_v2
                 case "Поставщики":
                     frame.Navigate(new ProviderPage());
                     break;
+                case "Продукты":
+                    frame.Navigate(new ProductPage());
+                    break;
+                case "Продажа":
+                    frame.Navigate(new SellPage());
+                    break;
             }
         }
     }

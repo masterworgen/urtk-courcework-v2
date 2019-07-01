@@ -76,7 +76,14 @@ namespace urtk_courcework_v2.Pages
 
         private void Database_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            var listItem = (ListBox)sender;
+            var item = (ProductModel)listItem.SelectedItem;
+            if (item == null) return;
+            name.Text = item.NameProduct;
+            shelfLife.Text = item.ShelfLifeProduct.ToString();
+            count.Text = item.CountProduct.ToString();
+            rest.Text = item.RestProduct.ToString();
+            price.Text = item.PriceProduct.ToString();
         }
     }
 }

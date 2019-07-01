@@ -9,15 +9,6 @@
       Title="ProductPage">
 
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="3*"></RowDefinition>
-            <RowDefinition></RowDefinition>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-        </Grid.ColumnDefinitions>
-        <Grid Grid.Row="0" ColumnSpan="3">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
@@ -40,14 +31,11 @@
                 <TextBlock Grid.Row="2" Grid.Column="0" Text="Количество прибывшего товара" TextWrapping="Wrap" FontSize="15" VerticalAlignment="Center"></TextBlock>
                 <TextBlock Grid.Row="3" Grid.Column="0" Text="Остаток" TextWrapping="Wrap" FontSize="15" VerticalAlignment="Center"></TextBlock>
                 <TextBlock Grid.Row="4" Grid.Column="0" Text="Цена" TextWrapping="Wrap" FontSize="15" VerticalAlignment="Center"></TextBlock>
-                <TextBox x:Name="denomintation" Grid.Row="0" Grid.Column="1" FontSize="15" VerticalAlignment="Center" LostFocus="Denomintation_LostFocus"/>
-                <TextBox x:Name="name" Grid.Row="1" Grid.Column="1" FontSize="15" VerticalAlignment="Center" LostFocus="Denomintation_LostFocus"/>
-                <TextBox x:Name="surname" Grid.Row="2" Grid.Column="1" FontSize="15" VerticalAlignment="Center" LostFocus="Denomintation_LostFocus"/>
-                <TextBox x:Name="patronymic" Grid.Row="3" Grid.Column="1" FontSize="15" VerticalAlignment="Center" LostFocus="Denomintation_LostFocus"/>
-                <TextBox x:Name="phone" Grid.Row="4" Grid.Column="1" FontSize="15" VerticalAlignment="Center" LostFocus="Denomintation_LostFocus"/>
+                <TextBlock x:Name="name" Grid.Row="0" Grid.Column="1" FontSize="15" VerticalAlignment="Center" />
+                <TextBlock x:Name="shelfLife" Grid.Row="1" Grid.Column="1" FontSize="15" VerticalAlignment="Center" />
+                <TextBlock x:Name="count" Grid.Row="2" Grid.Column="1" FontSize="15" VerticalAlignment="Center" />
+                <TextBlock x:Name="rest" Grid.Row="3" Grid.Column="1" FontSize="15" VerticalAlignment="Center" />
+                <TextBlock x:Name="price" Grid.Row="4" Grid.Column="1" FontSize="15" VerticalAlignment="Center" />
             </Grid>
         </Grid>
-        <Button x:Name="addButton" Grid.Row="1" Grid.Column="0" Content="Добавить" FontSize="30" Click="AddButton_Click"/>
-        <Button x:Name="deleteButton" Grid.Row="1" Grid.Column="1" Content="Удалить" FontSize="30" Click="DeleteButton_Click"/>
-    </Grid>
 </Page>

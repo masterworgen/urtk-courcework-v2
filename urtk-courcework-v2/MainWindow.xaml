@@ -48,11 +48,13 @@
                     <RowDefinition/>
                     <RowDefinition/>
                     <RowDefinition/>
+                    <RowDefinition/>
                 </Grid.RowDefinitions>
                 <RadioButton Content="Словарь" GroupName="knopki" Grid.Row="0" Checked="RadioButton_Checked"></RadioButton>
                 <RadioButton Content="Накладные" GroupName="knopki" Grid.Row="1" Checked="RadioButton_Checked"></RadioButton>
                 <RadioButton Content="Поставщики" GroupName="knopki" Grid.Row="2" Checked="RadioButton_Checked"></RadioButton>
-                <RadioButton GroupName="knopki" Grid.Row="3" Checked="RadioButton_Checked"></RadioButton>
+                <RadioButton Content="Продукты" GroupName="knopki" Grid.Row="3" Checked="RadioButton_Checked"></RadioButton>
+                <RadioButton Content="Продажа"  GroupName="knopki" Grid.Row="4" Checked="RadioButton_Checked"></RadioButton>
 
             </Grid>
             <Grid x:Name="IntfGrid" >
